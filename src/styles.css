@@ -178,3 +178,18 @@
 
 .animate-breeze { animation: breeze 6s infinite ease-in-out; }
 .animate-flare { animation: sun-flare 8s infinite ease-in-out; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-rise {
+  animation: rise 0.8s var(--ease-bloom) both;
+}
+
+/* ── Theme Contexts ──────────────────────────────────────── */
+/* theme-morning: hero card panel — legible over bg-morning.png */
+.theme-morning {
+  --panel-bg: rgba(253, 251, 247, 0.88);
+}
+

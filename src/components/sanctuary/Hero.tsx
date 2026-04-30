@@ -40,8 +40,14 @@ export function Hero() {
               className="w-full h-auto aspect-[3/4] object-cover hover:scale-[1.02] transition-transform duration-1000"
             />
           </div>
-          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white px-6 py-2 shadow-sm rounded-sm whitespace-nowrap">
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white px-6 py-2 shadow-sm rounded-sm whitespace-nowrap flex flex-col items-center gap-0.5">
             <span className="display-italic text-lg text-gold">Vikki Markey</span>
+            <span
+              className="eyebrow text-gold/80"
+              style={{ fontSize: "10px", letterSpacing: "0.2em" }}
+            >
+              Bridge Group Team Realtor
+            </span>
           </div>
         </div>
       </div>

@@ -10,41 +10,68 @@ export function Navigation() {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
-        scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-gold/20 py-4 shadow-sm"
-          : "bg-transparent py-6 md:py-8"
-      }`}
-    >
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6">
-        <a href="#top" className="display-italic text-gold text-2xl tracking-tight transition-opacity hover:opacity-80">
-          Vikki Markey
-        </a>
-        <div className="hidden items-center gap-10 md:flex">
-          {[
-            ["About", "#about"],
-            ["Services", "#services"],
-            ["Journey Home", "#journey"],
-            ["Properties", "#properties"],
-            ["Contact", "#contact"],
-          ].map(([label, href]) => (
-            <a
-              key={href}
-              href={href}
-              className={`eyebrow transition-all duration-300 hover:text-gold ${scrolled ? 'text-text-primary' : 'text-text-primary'}`}
-            >
-              {label}
-            </a>
-          ))}
+    <>
+      {/* Dark-to-transparent gradient veil — sits behind nav when at top of page */}
+      {!scrolled && (
+        <div
+          aria-hidden="true"
+          className="fixed top-0 left-0 right-0 z-40 h-40 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(10,10,8,0.82) 0%, rgba(10,10,8,0.4) 60%, transparent 100%)",
+          }}
+        />
+      )}
+
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+          scrolled
+            ? "bg-white/90 backdrop-blur-md border-b border-gold/20 py-4 shadow-sm"
+            : "bg-transparent py-6 md:py-8"
+        }`}
+      >
+        <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6">
+          <a
+            href="#top"
+            className={`display-italic text-2xl tracking-tight transition-all duration-300 ${
+              scrolled
+                ? "text-gold hover:opacity-80"
+                : "text-[#FAF6EF] drop-shadow-md hover:text-gold"
+            }`}
+          >
+            Vikki Markey
+          </a>
+
+          <div className="hidden items-center gap-10 md:flex">
+            {[
+              ["About", "#about"],
+              ["Services", "#services"],
+              ["Journey Home", "#journey"],
+              ["Properties", "#properties"],
+              ["Contact", "#contact"],
+            ].map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                className={`eyebrow transition-all duration-300 hover:text-gold ${
+                  scrolled
+                    ? "text-text-primary"
+                    : "text-[#FAF6EF] drop-shadow-md"
+                }`}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+
+          <a
+            href="#contact"
+            className="eyebrow bg-terracotta text-white px-6 py-3 rounded-sm transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_8px_30px_rgba(216,140,118,0.3)]"
+          >
+            Book a Call
+          </a>
         </div>
-        <a
-          href="#contact"
-          className="eyebrow bg-terracotta text-white px-6 py-3 rounded-sm transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_8px_30px_rgba(216,140,118,0.3)]"
-        >
-          Book a Call
-        </a>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
