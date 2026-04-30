@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 
-// White-glow text-shadow: invisible on light linen, gives contrast on the photo side
-const unveiledTextShadow =
-  "0 0 12px rgba(255,255,255,0.85), 0 1px 3px rgba(255,255,255,0.7)";
+// Heavy white stroke: readable on any photo background, invisible cost on linen side
+// -webkit-text-stroke for modern browsers; thick directional shadow as fallback
+const strokeStyle: React.CSSProperties = {
+  WebkitTextStroke: "1.5px rgba(255,255,255,0.92)",
+  textShadow:
+    "-1px -1px 0 rgba(255,255,255,0.9),  1px -1px 0 rgba(255,255,255,0.9)," +
+    "-1px  1px 0 rgba(255,255,255,0.9),  1px  1px 0 rgba(255,255,255,0.9)",
+};
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,7 +32,7 @@ export function Navigation() {
         <a
           href="#top"
           className="display-italic text-gold text-2xl tracking-tight transition-opacity hover:opacity-80"
-          style={scrolled ? {} : { textShadow: unveiledTextShadow }}
+          style={scrolled ? {} : strokeStyle}
         >
           Vikki Markey
         </a>
@@ -45,7 +50,7 @@ export function Navigation() {
               key={href}
               href={href}
               className="eyebrow text-text-primary transition-all duration-300 hover:text-gold"
-              style={scrolled ? {} : { textShadow: unveiledTextShadow }}
+              style={scrolled ? {} : strokeStyle}
             >
               {label}
             </a>
