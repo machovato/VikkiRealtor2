@@ -4,18 +4,9 @@ export function Contact() {
   const [sent, setSent] = useState(false);
 
   return (
-    <section id="contact" className="flex flex-col-reverse lg:flex-row min-h-[80vh] w-full bg-surface">
+    <section id="contact" className="flex flex-col lg:flex-row min-h-[80vh] w-full bg-surface">
       
-      {/* Left: Full 100% Scene Photo (50%) */}
-      <div className="w-full lg:w-1/2 min-h-[50vh] lg:min-h-[80vh] relative overflow-hidden">
-        <img
-          src="/bg-evening.png"
-          alt="Evening living room"
-          className="absolute inset-0 h-full w-full object-cover object-right"
-        />
-      </div>
-
-      {/* Right: Text Content (50%) */}
+      {/* Left: Text Content (50%) */}
       <div className="flex w-full lg:w-1/2 flex-col justify-center px-8 py-24 lg:px-16 xl:px-24 bg-background">
         <p className="eyebrow text-terracotta mb-6 block">Let's Connect</p>
         <h2 className="display-serif text-text-primary text-[clamp(2.5rem,4vw,3.5rem)] mb-3">
@@ -106,6 +97,15 @@ export function Contact() {
             <dd className="text-text-muted text-right">5800 Post Oak Blvd, Houston, TX 77056</dd>
           </div>
         </dl>
+      </div>
+
+      {/* Right: Full 100% Scene Photo (50%) */}
+      <div className="w-full lg:w-1/2 min-h-[50vh] lg:min-h-[80vh] relative overflow-hidden">
+        <img
+          src="/bg-evening.png"
+          alt="Evening living room"
+          className="absolute inset-0 h-full w-full object-cover object-left"
+        />
       </div>
       
     </section>
