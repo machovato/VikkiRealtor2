@@ -13,7 +13,7 @@ export function Hero() {
           over Transactions
         </h1>
         <p className="mt-8 max-w-md text-base leading-relaxed text-text-muted md:text-lg">
-          Serving Sugar Land, Houston, and the communities I've called home for 20 years.
+          No high-pressure sales, just neighborly guidance.
         </p>
         
         <div className="mt-12 flex flex-wrap items-center gap-5">

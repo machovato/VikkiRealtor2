@@ -12,7 +12,6 @@ export function Navigation() {
             ["About", "#about"],
             ["Services", "#services"],
             ["Journey Home", "#journey"],
-            ["Properties", "#properties"],
             ["Contact", "#contact"],
           ].map(([label, href]) => (
             <a
